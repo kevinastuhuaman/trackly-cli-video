@@ -67,7 +67,7 @@ export const Scene2Login: React.FC = () => {
               textAlign: "center",
             }}
           >
-            kevin.astuhuaman.flores@gmail.com
+            kevin@usetrackly.app
           </div>
         </div>
       )}
