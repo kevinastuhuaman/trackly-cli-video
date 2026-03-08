@@ -15,6 +15,10 @@ A framework for creating polished product launch videos entirely in code — no 
 
 First video: **Trackly CLI launch** — 8 scenes, 1080x1080, 30fps, 36 seconds, 3MB MP4. Showcases `npm install`, OAuth login, job search, AI queries, MCP integration, API keys, and a multi-platform CTA.
 
+<p align="center">
+  <video src="https://github.com/kevinastuhuaman/trackly-cli-video/releases/download/v1.0.0/trackly-launch.mp4" width="540" autoplay loop muted playsinline></video>
+</p>
+
 ## What it does
 
 - Builds animated videos as React components — each scene is a `.tsx` file
