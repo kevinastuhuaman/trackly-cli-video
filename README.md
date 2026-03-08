@@ -1,6 +1,10 @@
 # trackly-cli-video 🎬 — Animated product launch videos built with React, rendered as MP4.
 
 <p align="center">
+  <img src="assets/hero.png" alt="trackly-cli-video hero" width="1100">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
   <img src="https://img.shields.io/badge/Remotion-5B37BF?style=for-the-badge" alt="Remotion">
