@@ -51,7 +51,7 @@ export const FavNoNoise: React.FC = () => {
                 lineHeight: 1,
               }}
             >
-              775+
+              800+
             </span>
             <span
               style={{

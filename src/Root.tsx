@@ -44,7 +44,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="FavoritesPerks"
         component={FavoritesPerks}
-        durationInFrames={990}
+        durationInFrames={1040}
         fps={30}
         width={1080}
         height={1080}

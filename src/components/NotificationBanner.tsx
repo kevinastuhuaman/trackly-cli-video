@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
+import { useCurrentFrame, useVideoConfig, spring, interpolate, staticFile, Img } from "remotion";
 import { theme } from "../theme";
 
 interface NotificationBannerProps {
@@ -72,30 +72,17 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({
           boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4)",
         }}
       >
-        {/* App icon */}
+        {/* App icon — real Trackly icon */}
         <div
           style={{
             width: 36,
             height: 36,
             minWidth: 36,
             borderRadius: 8,
-            background: theme.colors.accent,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            overflow: "hidden",
           }}
         >
-          <span
-            style={{
-              color: "#FFFFFF",
-              fontSize: 18,
-              fontWeight: 700,
-              lineHeight: 1,
-              fontFamily: theme.font.body,
-            }}
-          >
-            T
-          </span>
+          <Img src={staticFile("trackly-appicon.png")} width={36} height={36} />
         </div>
 
         {/* Text content */}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Series, useCurrentFrame, interpolate } from "remotion";
-import { FavIntro } from "./scenes/FavIntro";
+import { FavHook } from "./scenes/FavHook";
 import { FavHowToStar } from "./scenes/FavHowToStar";
 import { FavSmartFilter } from "./scenes/FavSmartFilter";
 import { FavSmartNotifications } from "./scenes/FavSmartNotifications";
@@ -32,14 +32,14 @@ export const FavoritesPerks: React.FC = () => {
   return (
     <div style={{ background: theme.colors.bg, width: "100%", height: "100%" }}>
       <Series>
-        <Series.Sequence durationInFrames={100}>
-          <SceneTransition durationInFrames={100}>
-            <FavIntro />
+        <Series.Sequence durationInFrames={90}>
+          <SceneTransition durationInFrames={90}>
+            <FavHook />
           </SceneTransition>
         </Series.Sequence>
 
-        <Series.Sequence durationInFrames={150}>
-          <SceneTransition durationInFrames={150}>
+        <Series.Sequence durationInFrames={210}>
+          <SceneTransition durationInFrames={210}>
             <FavHowToStar />
           </SceneTransition>
         </Series.Sequence>

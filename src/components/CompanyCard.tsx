@@ -1,4 +1,5 @@
 import React from "react";
+import { Img } from "remotion";
 import { theme } from "../theme";
 import { StarIcon } from "./StarIcon";
 
@@ -8,6 +9,7 @@ interface CompanyCardProps {
   jobCount: number;
   isFavorite: boolean;
   logoInitial?: string;
+  logoUrl?: string;
   style?: React.CSSProperties;
   onStarAnimateAt?: number;
 }
@@ -18,6 +20,7 @@ export const CompanyCard: React.FC<CompanyCardProps> = ({
   jobCount,
   isFavorite,
   logoInitial,
+  logoUrl,
   style,
   onStarAnimateAt,
 }) => {
@@ -55,19 +58,24 @@ export const CompanyCard: React.FC<CompanyCardProps> = ({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          overflow: "hidden",
         }}
       >
-        <span
-          style={{
-            color: "#FFFFFF",
-            fontSize: 20,
-            fontWeight: 700,
-            lineHeight: 1,
-            fontFamily: theme.font.body,
-          }}
-        >
-          {initial}
-        </span>
+        {logoUrl ? (
+          <Img src={logoUrl} width={52} height={52} style={{ objectFit: "cover" }} />
+        ) : (
+          <span
+            style={{
+              color: "#FFFFFF",
+              fontSize: 20,
+              fontWeight: 700,
+              lineHeight: 1,
+              fontFamily: theme.font.body,
+            }}
+          >
+            {initial}
+          </span>
+        )}
       </div>
 
       {/* Name + domain stack */}

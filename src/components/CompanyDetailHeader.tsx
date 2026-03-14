@@ -1,4 +1,5 @@
 import React from "react";
+import { Img } from "remotion";
 import { theme } from "../theme";
 import { StarIcon } from "./StarIcon";
 
@@ -8,6 +9,7 @@ interface CompanyDetailHeaderProps {
   jobCount: number;
   isFavorite: boolean;
   logoInitial?: string;
+  logoUrl?: string;
 }
 
 export const CompanyDetailHeader: React.FC<CompanyDetailHeaderProps> = ({
@@ -16,6 +18,7 @@ export const CompanyDetailHeader: React.FC<CompanyDetailHeaderProps> = ({
   jobCount,
   isFavorite,
   logoInitial,
+  logoUrl,
 }) => {
   const initial = logoInitial || name.charAt(0).toUpperCase();
 
@@ -93,19 +96,24 @@ export const CompanyDetailHeader: React.FC<CompanyDetailHeaderProps> = ({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            overflow: "hidden",
           }}
         >
-          <span
-            style={{
-              color: "#FFFFFF",
-              fontSize: 20,
-              fontWeight: 700,
-              lineHeight: 1,
-              fontFamily: theme.font.body,
-            }}
-          >
-            {initial}
-          </span>
+          {logoUrl ? (
+            <Img src={logoUrl} width={52} height={52} style={{ objectFit: "cover" }} />
+          ) : (
+            <span
+              style={{
+                color: "#FFFFFF",
+                fontSize: 20,
+                fontWeight: 700,
+                lineHeight: 1,
+                fontFamily: theme.font.body,
+              }}
+            >
+              {initial}
+            </span>
+          )}
         </div>
 
         {/* Name + domain */}

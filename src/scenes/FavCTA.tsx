@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame, staticFile, Img } from "remotion";
 import { FadeIn } from "../components/FadeIn";
 import { theme } from "../theme";
 
@@ -69,35 +69,22 @@ export const FavCTA: React.FC = () => {
         </span>
       </FadeIn>
 
-      {/* App icon with pulsing glow */}
+      {/* App icon with pulsing glow — real Trackly icon */}
       <FadeIn delay={50} direction="up" distance={20}>
         <div
           style={{
-            width: 60,
-            height: 60,
-            borderRadius: 16,
-            background: theme.colors.accent,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            width: 80,
+            height: 80,
+            borderRadius: 20,
+            overflow: "hidden",
             boxShadow: `0 0 ${40 * glowPulse}px rgba(168, 85, 247, ${0.4 * glowPulse}), 0 0 ${80 * glowPulse}px rgba(168, 85, 247, ${0.15 * glowPulse})`,
           }}
         >
-          <span
-            style={{
-              color: "#FFFFFF",
-              fontSize: 30,
-              fontWeight: 700,
-              lineHeight: 1,
-              fontFamily: FONT_FAMILY,
-            }}
-          >
-            T
-          </span>
+          <Img src={staticFile("trackly-appicon.png")} width={80} height={80} />
         </div>
       </FadeIn>
 
-      {/* App Store text */}
+      {/* TestFlight text */}
       <FadeIn delay={65} direction="up" distance={15}>
         <span
           style={{
@@ -108,7 +95,7 @@ export const FavCTA: React.FC = () => {
             textAlign: "center",
           }}
         >
-          Available on the App Store
+          Available on TestFlight
         </span>
       </FadeIn>
     </div>
