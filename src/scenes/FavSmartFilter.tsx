@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
+import { Audio, Sequence, useCurrentFrame, useVideoConfig, spring, interpolate, staticFile } from "remotion";
 import { FadeIn } from "../components/FadeIn";
 import { IPhoneFrame } from "../components/iPhoneFrame";
 import { iOSJobCard as IOSJobCard } from "../components/iOSJobCard";
@@ -212,6 +212,14 @@ export const FavSmartFilter: React.FC = () => {
           </span>
         </div>
       </div>
+
+      {/* Sound effects */}
+      <Sequence from={FILTER_ACTIVATE_FRAME - 4} durationInFrames={9} layout="none">
+        <Audio src={staticFile("sfx/tap.wav")} volume={0.35} />
+      </Sequence>
+      <Sequence from={CARDS_SWAP_FRAME} durationInFrames={15} layout="none">
+        <Audio src={staticFile("sfx/whoosh.wav")} volume={0.20} />
+      </Sequence>
     </div>
   );
 };

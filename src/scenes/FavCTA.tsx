@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, staticFile, Img } from "remotion";
+import { Audio, Sequence, useCurrentFrame, staticFile, Img } from "remotion";
 import { FadeIn } from "../components/FadeIn";
 import { theme } from "../theme";
 
@@ -84,20 +84,49 @@ export const FavCTA: React.FC = () => {
         </div>
       </FadeIn>
 
-      {/* TestFlight text */}
+      {/* Brand stack: Company → Slogan → Availability */}
       <FadeIn delay={65} direction="up" distance={15}>
-        <span
-          style={{
-            fontSize: 14,
-            fontWeight: 400,
-            color: theme.colors.muted,
-            fontFamily: FONT_FAMILY,
-            textAlign: "center",
-          }}
-        >
-          Available on TestFlight
-        </span>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}>
+          <span
+            style={{
+              fontSize: 28,
+              fontWeight: 800,
+              color: theme.colors.white,
+              fontFamily: theme.font.display,
+              letterSpacing: -0.5,
+            }}
+          >
+            Trackly
+          </span>
+          <span
+            style={{
+              fontSize: 18,
+              fontWeight: 600,
+              color: theme.colors.accentBright,
+              fontFamily: FONT_FAMILY,
+              letterSpacing: 0.3,
+            }}
+          >
+            Apply first. Get Hired.
+          </span>
+          <span
+            style={{
+              fontSize: 13,
+              fontWeight: 400,
+              color: theme.colors.dim,
+              fontFamily: FONT_FAMILY,
+              marginTop: 2,
+            }}
+          >
+            Available on TestFlight
+          </span>
+        </div>
       </FadeIn>
+
+      {/* Sound effect — brand reveal */}
+      <Sequence from={50} durationInFrames={60} layout="none">
+        <Audio src={staticFile("sfx/resolve.wav")} volume={0.45} />
+      </Sequence>
     </div>
   );
 };

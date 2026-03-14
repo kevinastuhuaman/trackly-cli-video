@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
+import { Audio, Sequence, useCurrentFrame, useVideoConfig, spring, interpolate, staticFile } from "remotion";
 import { IPhoneFrame } from "../components/iPhoneFrame";
 import { CompanyCard } from "../components/CompanyCard";
 import { TouchIndicator, TapEvent } from "../components/TouchIndicator";
@@ -307,6 +307,23 @@ export const FavHowToStar: React.FC = () => {
           </span>
         </div>
       </div>
+
+      {/* Sound effects */}
+      <Sequence from={STAR_STRIPE - 4} durationInFrames={9} layout="none">
+        <Audio src={staticFile("sfx/tap.wav")} volume={0.35} />
+      </Sequence>
+      <Sequence from={STAR_AMAZON - 4} durationInFrames={9} layout="none">
+        <Audio src={staticFile("sfx/tap.wav")} volume={0.35} />
+      </Sequence>
+      <Sequence from={STAR_NOTION - 4} durationInFrames={9} layout="none">
+        <Audio src={staticFile("sfx/tap.wav")} volume={0.35} />
+      </Sequence>
+      <Sequence from={TOUCH_FAVS} durationInFrames={9} layout="none">
+        <Audio src={staticFile("sfx/tap.wav")} volume={0.35} />
+      </Sequence>
+      <Sequence from={CARDS_FADEOUT} durationInFrames={15} layout="none">
+        <Audio src={staticFile("sfx/whoosh.wav")} volume={0.20} />
+      </Sequence>
     </div>
   );
 };

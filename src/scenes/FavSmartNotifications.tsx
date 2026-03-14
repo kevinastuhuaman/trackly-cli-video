@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
+import { Audio, Sequence, useCurrentFrame, useVideoConfig, spring, interpolate, staticFile } from "remotion";
 import { FadeIn } from "../components/FadeIn";
 import { IPhoneFrame } from "../components/iPhoneFrame";
 import { NotificationBanner } from "../components/NotificationBanner";
@@ -169,6 +169,17 @@ export const FavSmartNotifications: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Sound effects */}
+      <Sequence from={20} durationInFrames={18} layout="none">
+        <Audio src={staticFile("sfx/notification.wav")} volume={0.50} />
+      </Sequence>
+      <Sequence from={TAP_FRAME - 4} durationInFrames={9} layout="none">
+        <Audio src={staticFile("sfx/tap.wav")} volume={0.35} />
+      </Sequence>
+      <Sequence from={PHASE2_START} durationInFrames={15} layout="none">
+        <Audio src={staticFile("sfx/whoosh.wav")} volume={0.20} />
+      </Sequence>
 
       {/* Phase 2: Company detail in phone frame */}
       {!isPhase1 && (
