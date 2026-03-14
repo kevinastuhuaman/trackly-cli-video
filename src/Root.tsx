@@ -5,6 +5,7 @@ import { SwipeIOSTutorial } from "./SwipeIOSTutorial";
 import { SwipeWebTutorial } from "./SwipeWebTutorial";
 import { IOSFeatureUpdate } from "./IOSFeatureUpdate";
 import { FavoritesPerks } from "./FavoritesPerks";
+import { StartupExpansion } from "./StartupExpansion";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -45,6 +46,14 @@ export const RemotionRoot: React.FC = () => {
         id="FavoritesPerks"
         component={FavoritesPerks}
         durationInFrames={1250}
+        fps={30}
+        width={1080}
+        height={1080}
+      />
+      <Composition
+        id="StartupExpansion"
+        component={StartupExpansion}
+        durationInFrames={900}
         fps={30}
         width={1080}
         height={1080}
