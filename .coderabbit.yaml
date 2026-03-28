@@ -1,0 +1,9 @@
+reviews:
+  path_instructions:
+    - path: "**/*.{ts,tsx}"
+      instructions: |
+        Remotion video project (React/TypeScript). Key rules:
+        - All scenes must use Remotion's useCurrentFrame() and useVideoConfig() hooks
+        - Audio files must be from the royalty-free folder only
+        - Render output: MP4 at 1920x1080, 30fps unless specified otherwise
+        - Component props must be typed (no any)
