@@ -52,6 +52,12 @@ Manual render with options:
 npx remotion render src/index.ts TracklyLaunch out/trackly-launch.mp4
 ```
 
+## Merge Strategy
+
+- Always use `gh pr merge --merge` (merge commits). NEVER `--squash`, NEVER `--rebase`.
+- NEVER use `--delete-branch` — fails in Conductor worktrees and blocks the post-merge sync hook.
+- GitHub auto-deletes remote branches via repo settings.
+
 ## Scene Architecture
 
 1. **Root.tsx** defines the `<Composition>` with total frames (1090), fps (30), and dimensions (1080x1080).
