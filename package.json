@@ -8,8 +8,8 @@
     "preview": "remotion preview src/index.ts"
   },
   "devDependencies": {
-    "@remotion/cli": "^4.0.434",
-    "@remotion/tailwind": "^4.0.434",
+    "@remotion/cli": "^4.0.491",
+    "@remotion/tailwind": "^4.0.491",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/react": "^18.3.0",
     "remotion": "^4.0.434",
