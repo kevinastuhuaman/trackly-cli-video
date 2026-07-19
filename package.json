@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "remotion studio src/index.ts",
     "build": "remotion render src/index.ts TracklyLaunch out/trackly-launch.mp4",
-    "preview": "remotion preview src/index.ts"
+    "preview": "remotion preview src/index.ts",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@remotion/cli": "^4.0.434",
